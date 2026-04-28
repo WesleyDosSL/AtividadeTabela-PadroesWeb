@@ -1,22 +1,103 @@
-table{
-    border: 1px solid black;
+/* Tornando o container principal responsivo para a tabela rolar horizontalmente em telas pequenas */
+main {
+    overflow-x: auto;
+    width: 100%;
+}
+
+/* --- Tabela --- */
+table {
+    border: 2px solid #2980b9;
     border-collapse: collapse;
     width: 100%;
     caption-side: bottom;
-    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
-th, td{
-    border: 1px solid black;
+/* Bordas das células */
+th, td {
+    border: 1px solid #3498db; 
     padding: 8px;
 }
 
-tr:nth-child(even){
-    background-color:bisque;
+/* Cabeçalho formatado diferente do conteúdo e texto centralizado */
+th {
+    background-color: #2980b9;
+    color: white;
+    text-align: center;
+    cursor: pointer; /* Muda o cursor para mostrar que é clicável para o JS */
 }
 
-caption{
+/* Alinhamento padrão de texto à esquerda para o corpo da tabela */
+td {
+    text-align: left;
+}
+
+/* Alinhando números à direita: Posição (col 1), Ano (col 4) e Vendas (col 5) */
+td:nth-child(1), td:nth-child(4), td:nth-child(5) {
+    text-align: right;
+}
+
+/* Estilo Zebra para linhas pares */
+tr:nth-child(even) {
+    background-color: bisque;
+}
+
+tbody tr:hover td {
+    background-color: #f1c40f;
+    transition: 0.2s;
+}
+
+/* Nova classe que será adicionada pelo JavaScript nativo */
+td.hover-ativo {
+    background-color: #f1c40f !important;
+    transition: 0.2s;
+}
+
+/* Legenda centralizada abaixo */
+caption {
     text-align: center;
     font-weight: bold;
     padding: 10px;
+}
+
+/* --- Header --- */
+header {
+    background-color: #2c3e50; 
+    color: #ecf0f1; 
+    text-align: center;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar do fundo */
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2em;
+    color: #3498db; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+header p {
+    margin: 0 auto; /* Centraliza o parágrafo */
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px; /* limita a largura do texto*/
+}
+
+/* --- Rodapé --- */
+footer {
+    background-color: #2c3e50; 
+    color: #bdc3c7;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Sombra invertida (para cima) */
+}
+
+footer p {
+    margin: 5px 0;
 }
